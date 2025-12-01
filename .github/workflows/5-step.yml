@@ -28,7 +28,7 @@ jobs:
       ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Create comment - add step content
         run: |
           gh issue comment "$ISSUE_URL" \
@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Disable current workflow
         run: gh workflow disable "${{github.workflow}}"
         env:
